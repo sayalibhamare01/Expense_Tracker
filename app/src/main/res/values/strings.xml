@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Expense_tracker</string>
+    <string name="login">Login</string>
+    <string name="to_get_started">to get started</string>
+    <string name="forgotpass">ForgotPassword?</string>
+    <string name="newuser">New User? Register</string>
+    <string name="passfield">Password</string>
+    <string name="emailfield">Email</string>
+    <string name="register">Register</string>
+    <string name="namefield">Name</string>
+    <string name="signupQuote">Empower your financial journey with precision.</string>
+    <string name="confpass">Confirm Password</string>
+    <string name="signup">Signup</string>
+    <string name="balance">Total Balance</string>
+    <string name="balamount">$237,50.00</string>
+    <string name="cardno">**** **** **** 1234</string>
+    <string name="cardlogo">cardlogo</string>
+    <string name="Recentactivity">Recent Activity</string>
+    <string name="viewall">View all</string>
+    <string name="transaction">Transaction</string>
+</resources>

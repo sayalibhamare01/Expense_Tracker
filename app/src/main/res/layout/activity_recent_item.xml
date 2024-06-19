@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Analytics">
+
+  <TextView
+      android:id="@+id/textView6"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="8dp"
+      android:text="Add Expense"
+      android:textAlignment="viewStart"
+      android:textColor="#575757"
+      android:textSize="48sp"
+      android:textStyle="bold"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <View
+      android:id="@+id/view2"
+      android:layout_width="match_parent"
+      android:layout_height="60dp"
+      android:layout_marginTop="4dp"
+      android:background="@drawable/upper_rounded_rectangle"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/jugad"
+      app:layout_constraintVertical_bias="1.0" />
+
+  <ImageView
+      android:id="@+id/IVstats"
+      android:layout_width="40dp"
+      android:layout_height="40dp"
+      android:layout_marginStart="40dp"
+      android:src="@drawable/empty_piechart"
+      app:layout_constraintBottom_toBottomOf="@+id/IvExpensesPage"
+      app:layout_constraintStart_toEndOf="@+id/addExpense"
+      app:layout_constraintTop_toTopOf="@+id/IvExpensesPage"
+      app:layout_constraintVertical_bias="0.0" />
+
+  <ImageView
+      android:id="@+id/IVhome"
+      android:layout_width="40dp"
+      android:layout_height="40dp"
+      android:layout_marginStart="24dp"
+      android:src="@drawable/emptyhome"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/view2"
+      app:layout_constraintVertical_bias="0.6" />
+
+  <ImageView
+      android:id="@+id/IvExpensesPage"
+      android:layout_width="40dp"
+      android:layout_height="40dp"
+      android:layout_marginStart="48dp"
+      android:layout_marginEnd="40dp"
+      android:src="@drawable/list"
+      app:layout_constraintBottom_toBottomOf="@+id/IVhome"
+      app:layout_constraintEnd_toStartOf="@+id/addExpense"
+      app:layout_constraintStart_toEndOf="@+id/IVhome"
+      app:layout_constraintTop_toTopOf="@+id/IVhome"
+      app:layout_constraintVertical_bias="1.0" />
+
+  <ImageView
+      android:id="@+id/jugad"
+      android:layout_width="40dp"
+      android:layout_height="40dp"
+      android:layout_marginStart="48dp"
+      android:layout_marginEnd="24dp"
+      android:src="@drawable/empty_person"
+      app:layout_constraintBottom_toBottomOf="@+id/IVstats"
+      app:layout_constraintEnd_toEndOf="@+id/view2"
+      app:layout_constraintHorizontal_bias="1.0"
+      app:layout_constraintStart_toEndOf="@+id/IVstats"
+      app:layout_constraintTop_toTopOf="@+id/IVstats"
+      app:layout_constraintVertical_bias="0.0" />
+
+  <com.google.android.material.floatingactionbutton.FloatingActionButton
+      android:id="@+id/addExpense"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="24dp"
+      android:backgroundTint="#575757"
+      android:clickable="true"
+      android:contentDescription="@string/balamount"
+      android:src="@drawable/addsign"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.498"
+      app:layout_constraintStart_toStartOf="parent" />
+
+  <ScrollView
+      android:contentDescription="@string/transaction"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      app:layout_constraintBottom_toTopOf="@+id/addExpense"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textView6">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+      <androidx.cardview.widget.CardView
+          android:layout_width="360dp"
+          android:layout_height="120dp"
+          android:layout_gravity="center"
+          android:layout_marginTop="32dp"
+          app:cardCornerRadius="14dp"
+          android:backgroundTint="#F3F3F3">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+          <TextView
+              android:id="@+id/textView7"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="10dp"
+              android:layout_marginTop="10dp"
+              android:textColor="#323232"
+              android:text="Amount"
+              android:textSize="20sp"
+              android:textStyle="bold"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent" />
+
+          <EditText
+              android:id="@+id/etamount"
+              android:layout_width="340dp"
+              android:layout_height="50dp"
+              android:layout_marginStart="10dp"
+              android:layout_marginTop="20dp"
+              android:ems="10"
+              android:textColorHint="#575757"
+              android:hint="Enter Amount"
+              android:inputType="numberDecimal"
+              android:textSize="24sp"
+              android:textStyle="bold"
+              android:textColor="#575757"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintHorizontal_bias="0.042"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+      </androidx.cardview.widget.CardView>
+
+      <androidx.cardview.widget.CardView
+          android:layout_width="360dp"
+          android:layout_height="120dp"
+          android:backgroundTint="#F3F3F3"
+          android:layout_gravity="center"
+          android:layout_marginTop="32dp"
+          app:cardCornerRadius="14dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+          <TextView
+              android:id="@+id/textView8"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="10dp"
+              android:layout_marginTop="10dp"
+              android:text="Date And Time"
+              android:textColor="#323232"
+              android:textSize="20sp"
+              android:textStyle="bold"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent" />
+
+          <TextView
+              android:id="@+id/tvdatetime"
+              android:layout_width="340dp"
+              android:layout_height="50dp"
+              android:layout_marginTop="20dp"
+              android:hint="Select Date and Time"
+              android:paddingVertical="8dp"
+              android:textAlignment="center"
+              android:textColor="#575757"
+              android:textColorHint="#575757"
+              android:textSize="24sp"
+              android:textStyle="bold"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toBottomOf="@+id/textView8"
+              app:layout_constraintVertical_bias="0.055" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+      </androidx.cardview.widget.CardView>
+
+      <androidx.cardview.widget.CardView
+          android:layout_width="360dp"
+          android:layout_height="140dp"
+          android:layout_gravity="center"
+          android:backgroundTint="#F3F3F3"
+          android:layout_marginTop="32dp"
+          app:cardCornerRadius="14dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+          <TextView
+              android:id="@+id/textView17"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="10dp"
+              android:layout_marginTop="10dp"
+              android:text="Transaction Type"
+              android:textColor="#323232"
+              android:textSize="20sp"
+              android:textStyle="bold"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent" />
+
+          <RadioGroup
+              android:layout_width="340dp"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="20dp"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toBottomOf="@+id/textView17"
+              app:layout_constraintVertical_bias="0.0">
+
+            <RadioButton
+                android:id="@+id/radioButtonCredit"
+                android:layout_width="112dp"
+                android:layout_height="35dp"
+                android:text="Credited"
+                android:textColor="#575757"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/radioButtonDebit"
+                android:layout_width="112dp"
+                android:layout_height="35dp"
+                android:text="Debited"
+                android:textColor="#575757"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+          </RadioGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+      </androidx.cardview.widget.CardView>
+
+      <androidx.cardview.widget.CardView
+          android:layout_width="360dp"
+          android:layout_height="120dp"
+          android:layout_gravity="center"
+          android:backgroundTint="#F3F3F3"
+          android:layout_marginTop="32dp"
+          app:cardCornerRadius="14dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+          <TextView
+              android:id="@+id/textView18"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="10dp"
+              android:layout_marginTop="10dp"
+              android:text="Method Of Payment"
+              android:textSize="20sp"
+              android:textColor="#323232"
+              android:textStyle="bold"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent" />
+
+          <Spinner
+              android:id="@+id/payment_method"
+              android:layout_width="340dp"
+              android:layout_height="50dp"
+              android:layout_marginTop="20dp"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintHorizontal_bias="0.45"
+              app:layout_constraintStart_toStartOf="parent"
+              android:spinnerMode="dropdown"
+              android:textColor="#575757"
+              app:layout_constraintTop_toBottomOf="@+id/textView18"
+              app:layout_constraintVertical_bias="0.0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+      </androidx.cardview.widget.CardView>
+
+      <androidx.cardview.widget.CardView
+          android:layout_width="360dp"
+          android:layout_height="120dp"
+          android:layout_gravity="center"
+          android:backgroundTint="#F3F3F3"
+          android:layout_marginTop="32dp"
+          app:cardCornerRadius="14dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+          <Spinner
+              android:id="@+id/expense_cat"
+              android:layout_width="340dp"
+              android:layout_height="50dp"
+              android:layout_marginTop="20dp"
+              android:textColor="#575757"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintHorizontal_bias="0.45"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toBottomOf="@+id/textView16"
+              app:layout_constraintVertical_bias="0.0" />
+
+          <TextView
+              android:id="@+id/textView16"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="10dp"
+              android:layout_marginTop="10dp"
+              android:text="Categroy Of Expense"
+              android:textColor="#323232"
+              android:textSize="20sp"
+              android:textStyle="bold"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+      </androidx.cardview.widget.CardView>
+
+      <androidx.cardview.widget.CardView
+          android:layout_width="360dp"
+          android:layout_height="120dp"
+          android:layout_gravity="center"
+          android:backgroundTint="#F3F3F3"
+          android:layout_marginTop="32dp"
+          app:cardCornerRadius="14dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+          <TextView
+              android:id="@+id/Name"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="10dp"
+              android:layout_marginTop="10dp"
+              android:text="Name"
+              android:textSize="20sp"
+              android:textColor="#323232"
+              android:textStyle="bold"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent" />
+
+          <EditText
+              android:id="@+id/Nameoftransaction"
+              android:layout_width="340dp"
+              android:layout_height="50dp"
+              android:layout_marginTop="20dp"
+              android:ems="10"
+              android:hint="Name Transction"
+              android:inputType="text"
+              android:textColor="#323232"
+              android:textColorHint="#323232"
+              android:textSize="24sp"
+              android:textStyle="bold"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toBottomOf="@+id/Name" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+      </androidx.cardview.widget.CardView>
+
+      <Button
+          android:id="@+id/savetransaction"
+          android:layout_width="160dp"
+          android:layout_height="60dp"
+          android:layout_gravity="center"
+          android:layout_marginTop="24dp"
+          android:layout_marginBottom="24dp"
+          android:backgroundTint="#575757"
+          android:lineSpacingExtra="8sp"
+          android:text="Submit"
+          android:textColor="#f3f3f3"
+          android:textSize="20sp" />
+    </LinearLayout>
+  </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
